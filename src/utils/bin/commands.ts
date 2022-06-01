@@ -43,15 +43,6 @@ export const resume = async (args: string[]): Promise<string> => {
   return 'Opening resume...';
 };
 
-// Donate
-export const donate = async (args: string[]): Promise<string> => {
-  return `thank you for your interest.
-here are the ways you can support my work:
-- <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.donate_urls.paypal}" target="_blank">paypal</a></u>
-- <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.donate_urls.patreon}" target="_blank">patreon</a></u>
-`;
-};
-
 // Contact
 export const email = async (args: string[]): Promise<string> => {
   window.open(`mailto:${config.email}`);
@@ -155,4 +146,13 @@ Type 'repo' or click <u><a class="text-light-blue dark:text-dark-blue underline"
 // export const bing = async (args: string[]): Promise<string> => {
 //   window.open(`https://bing.com/search?q=${args.join(' ')}`);
 //   return `Wow, really? You are using bing for ${args.join(' ')}?`;
+// };
+
+// Donate
+// export const donate = async (args: string[]): Promise<string> => {
+//   return `thank you for your interest.
+// here are the ways you can support my work:
+// - <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.donate_urls.paypal}" target="_blank">paypal</a></u>
+// - <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.donate_urls.patreon}" target="_blank">patreon</a></u>
+// `;
 // };
