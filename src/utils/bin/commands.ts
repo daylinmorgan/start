@@ -62,14 +62,35 @@ export const linkedin = async (args: string[]): Promise<string> => {
 };
 
 // Search
+// if no args open base url
 export const google = async (args: string[]): Promise<string> => {
+  if (args.length === 0) {
+  window.open(`https://google.com/`);
+  return `Opening google...`;
+  } else {
   window.open(`https://google.com/search?q=${args.join(' ')}`);
   return `Searching google for ${args.join(' ')}...`;
+  }
 };
 
 export const reddit = async (args: string[]): Promise<string> => {
+  if (args.length === 0) {
+  window.open(`https://www.reddit.com/`);
+  return `Opening reddit...`;
+  } else {
   window.open(`https://www.reddit.com/search/?q=${args.join(' ')}`);
   return `Searching reddit for ${args.join(' ')}...`;
+  }
+};
+
+export const youtube = async (args: string[]): Promise<string> => {
+  if (args.length === 0) {
+  window.open(`https://www.youtube.com/`);
+  return `Opening youtube...`;
+  } else {
+  window.open(`https://www.youtube.com/results?search_query=${args.join(' ')}`);
+  return `Searching youtube for ${args.join(' ')}...`;
+  }
 };
 
 // Typical linux commands
