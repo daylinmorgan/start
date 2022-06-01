@@ -1,16 +1,16 @@
 {
   "readmeUrl": "https://raw.githubusercontent.com/cveinnt/cveinnt/master/README.md",
   "title": "LiveTerm",
-  "name": "John Doe",
+  "name": "daylin",
   "ascii": "liveterm",
   "social": {
     "github": "github",
     "linkedin": "linkedin"
   },
-  "email": "contact@email.com",
-  "ps1_hostname": "liveterm",
+  "email": "me@dayl.in",
+  "ps1_hostname": "start.dayl.in",
   "ps1_username": "visitor",
-  "repo": "https://github.com/Cveinnt/LiveTerm",
+  "repo": "https://github.com/daylinmorgan/start",
   "resume_url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Resume.pdf",
   "colors": {
     "light": {
