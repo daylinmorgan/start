@@ -49,6 +49,8 @@ export const email = async (args: string[]): Promise<string> => {
   return `Opening mailto:${config.email}...`;
 };
 
+
+// Social
 export const github = async (args: string[]): Promise<string> => {
   window.open(`https://github.com/${config.social.github}/`);
 
@@ -92,6 +94,13 @@ export const youtube = async (args: string[]): Promise<string> => {
   return `Searching youtube for ${args.join(' ')}...`;
   }
 };
+
+// url opening
+export const open = async (args: string[]): Promise<string> => {
+  window.open(`https://${args}`,'_self');
+  return 'Opening in current tab';
+};
+
 
 // Typical linux commands
 export const echo = async (args: string[]): Promise<string> => {
