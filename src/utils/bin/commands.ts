@@ -5,7 +5,6 @@ import config from '../../../config.json';
 
 // Help
 export const help = async (args: string[]): Promise<string> => {
-  const commands = Object.keys(bin).sort().join(', ');
   var c = '';
   for (let i = 1; i <= Object.keys(bin).sort().length; i++) {
     if (i % 7 === 0) {
@@ -19,6 +18,21 @@ export const help = async (args: string[]): Promise<string> => {
 [tab]: trigger completion.
 [ctrl+l]/clear: clear terminal.\n
 Type 'sumfetch' to display summary.
+`;
+};
+
+// Link Help
+export const links = async (args: string[]): Promise<string> => {
+  var c = '';
+  for (let i = 1; i <= Object.keys(config.links).sort().length; i++) {
+    if (i % 7 === 0) {
+      c += Object.keys(config.links).sort()[i - 1] + '\n';
+    } else {
+      c += Object.keys(config.links).sort()[i - 1] + ' ';
+    }
+  }
+  return `See below for available links:
+  \n${c}\n
 `;
 };
 
@@ -53,13 +67,11 @@ export const email = async (args: string[]): Promise<string> => {
 // Social
 export const github = async (args: string[]): Promise<string> => {
   window.open(`https://github.com/${config.social.github}/`);
-
   return 'Opening github...';
 };
 
 export const linkedin = async (args: string[]): Promise<string> => {
   window.open(`https://www.linkedin.com/in/${config.social.linkedin}/`);
-
   return 'Opening linkedin...';
 };
 

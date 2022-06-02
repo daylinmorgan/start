@@ -31,5 +31,10 @@
       "blue": "#89b4fa",
       "red": "#f38ba8"
     }
+  },
+  "links": {
+    "brocklab": "github.com/brocklab",
+    "unix": "reddit.com/r/unixporn",
+    "box": "utbox.utexas.edu"
   }
 }
