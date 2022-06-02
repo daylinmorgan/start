@@ -22,13 +22,16 @@ Type 'sumfetch' to display summary.
 };
 
 // Link Help
+// TODO: make these hyperlinks
 export const links = async (args: string[]): Promise<string> => {
   var c = '';
   for (let i = 1; i <= Object.keys(config.links).sort().length; i++) {
+    const linkName = Object.keys(config.links).sort()[i - 1];
+    const linkText = `<u><a class="text-light-blue dark:text-dark-blue underline" href="https://${config.links[linkName]}" target="_blank">${linkName}</a></u>`;
     if (i % 7 === 0) {
-      c += Object.keys(config.links).sort()[i - 1] + '\n';
+      c += linkText + '\n';
     } else {
-      c += Object.keys(config.links).sort()[i - 1] + ' ';
+      c += linkText + ' ';
     }
   }
   return `See below for available links:
@@ -63,7 +66,6 @@ export const email = async (args: string[]): Promise<string> => {
   return `Opening mailto:${config.email}...`;
 };
 
-
 // Social
 export const github = async (args: string[]): Promise<string> => {
   window.open(`https://github.com/${config.social.github}/`);
@@ -79,40 +81,41 @@ export const linkedin = async (args: string[]): Promise<string> => {
 // if no args open base url
 export const google = async (args: string[]): Promise<string> => {
   if (args.length === 0) {
-  window.open(`https://google.com/`);
-  return `Opening google...`;
+    window.open(`https://google.com/`);
+    return `Opening google...`;
   } else {
-  window.open(`https://google.com/search?q=${args.join(' ')}`);
-  return `Searching google for ${args.join(' ')}...`;
+    window.open(`https://google.com/search?q=${args.join(' ')}`);
+    return `Searching google for ${args.join(' ')}...`;
   }
 };
 
 export const reddit = async (args: string[]): Promise<string> => {
   if (args.length === 0) {
-  window.open(`https://www.reddit.com/`);
-  return `Opening reddit...`;
+    window.open(`https://www.reddit.com/`);
+    return `Opening reddit...`;
   } else {
-  window.open(`https://www.reddit.com/search/?q=${args.join(' ')}`);
-  return `Searching reddit for ${args.join(' ')}...`;
+    window.open(`https://www.reddit.com/search/?q=${args.join(' ')}`);
+    return `Searching reddit for ${args.join(' ')}...`;
   }
 };
 
 export const youtube = async (args: string[]): Promise<string> => {
   if (args.length === 0) {
-  window.open(`https://www.youtube.com/`);
-  return `Opening youtube...`;
+    window.open(`https://www.youtube.com/`);
+    return `Opening youtube...`;
   } else {
-  window.open(`https://www.youtube.com/results?search_query=${args.join(' ')}`);
-  return `Searching youtube for ${args.join(' ')}...`;
+    window.open(
+      `https://www.youtube.com/results?search_query=${args.join(' ')}`,
+    );
+    return `Searching youtube for ${args.join(' ')}...`;
   }
 };
 
 // url opening
 export const open = async (args: string[]): Promise<string> => {
-  window.open(`https://${args}`,'_self');
+  window.open(`https://${args}`, '_self');
   return 'Opening in current tab';
 };
-
 
 // Typical linux commands
 export const echo = async (args: string[]): Promise<string> => {
@@ -122,7 +125,6 @@ export const echo = async (args: string[]): Promise<string> => {
 export const whoami = async (args: string[]): Promise<string> => {
   return `${config.ps1_username}`;
 };
-
 
 export const date = async (args: string[]): Promise<string> => {
   return new Date().toString();
@@ -136,14 +138,12 @@ export const sudo = async (args?: string[]): Promise<string> => {
 // Banner
 export const banner = (args?: string[]): string => {
   return `
-  █████████   █████                         █████
- ███░░░░░███ ░░███                         ░░███
-░███    ░░░  ███████    ██████   ████████  ███████
-░░█████████ ░░░███░    ░░░░░███ ░░███░░███░░░███░
- ░░░░░░░░███  ░███      ███████  ░███ ░░░   ░███
- ███    ░███  ░███ ███ ███░░███  ░███       ░███ ███
-░░█████████   ░░█████ ░░████████ █████      ░░█████
- ░░░░░░░░░     ░░░░░   ░░░░░░░░ ░░░░░        ░░░░░
+███████╗████████╗ █████╗ ██████╗ ████████╗    ██████╗  █████╗  ██████╗ ███████╗
+██╔════╝╚══██╔══╝██╔══██╗██╔══██╗╚══██╔══╝    ██╔══██╗██╔══██╗██╔════╝ ██╔════╝
+███████╗   ██║   ███████║██████╔╝   ██║       ██████╔╝███████║██║  ███╗█████╗
+╚════██║   ██║   ██╔══██║██╔══██╗   ██║       ██╔═══╝ ██╔══██║██║   ██║██╔══╝
+███████║   ██║   ██║  ██║██║  ██║   ██║       ██║     ██║  ██║╚██████╔╝███████╗
+╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝       ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚══════╝
 
 Type 'help' to see the list of available commands.
 Type 'sumfetch' to display summary.
