@@ -14,7 +14,8 @@
   "resume_url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Resume.pdf",
   "colors": {
     "light": {
-      "background": "#eff1f5",
+      "background": "#dce0e8",
+      "terminal-background": "#eff1f5",
       "foreground": "#4c4f69",
       "yellow": "#df8e1d",
       "green": "#40a02b",
@@ -23,7 +24,8 @@
       "red": "#d20f39"
     },
     "dark": {
-      "background": "#1e1e2e",
+      "background": "#11111b",
+      "terminal-background": "#1e1e2e",
       "foreground": "#cdd6f4",
       "yellow": "#f9e2af",
       "green": "#a6e3a1",
