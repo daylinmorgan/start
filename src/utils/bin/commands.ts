@@ -148,6 +148,11 @@ export const sudo = async (args?: string[]): Promise<string> => {
   return `Permission denied: with little power comes... no responsibility? `;
 };
 
+export const exit = async (args: string[]): Promise<string> => {
+  window.close();
+  return `Exiting...`
+};
+
 // Banner
 export const banner = (args?: string[]): string => {
   return `
