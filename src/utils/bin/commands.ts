@@ -111,6 +111,19 @@ export const youtube = async (args: string[]): Promise<string> => {
   }
 };
 
+export const wiki = async (args: string[]): Promise<string> => {
+  if (args.length === 0) {
+    window.open(`https://en.wikipedia.org/`);
+    return `Opening wikipedia...`;
+  } else {
+    window.open(
+      `https://en.wikipedia.org/wiki/Special:Search/${args.join(' ')}`,
+    );
+    return `Searching wikipedia for ${args.join(' ')}...`;
+  }
+};
+
+
 // url opening
 export const open = async (args: string[]): Promise<string> => {
   window.open(`https://${args}`, '_self');
